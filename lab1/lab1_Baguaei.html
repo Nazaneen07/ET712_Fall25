@@ -71,13 +71,20 @@
         console.log(`slice useing negative index ${password.slice(-5)}`)
 
         console.log("---- EXERCISE -----")
-        //
-        let number = parseInt(prompt(`please enter a number`))
-        //second charecter 
-        console.log(`The second letter of the word is ${password}`)
-        // Length
-        console.log(`hello`)
+       // 1. collect a word from user
+        let word = prompt("Please enter a word:")
 
+        // 2. print the second character
+        console.log(`The second letter of the word is: ${word[1]}`)
+
+        // 3. print the length of the word
+        console.log(`The length of the word "${word}" is ${word.length}.`)
+
+        // 4. print the word in uppercase
+        console.log(word.toUpperCase())
+
+        // 5. print last two characters using slice
+        console.log(`The last two characters of the word are "${word.slice(-2)}".`)
 
 
     </script>
