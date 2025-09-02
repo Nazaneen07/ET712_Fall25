@@ -106,12 +106,50 @@ switch (gender) {
 }
 
 console.log("\n-------- EXERCISE 1 --------")
-let user_input = prompt("enter something")
+
+user_input = prompt("enter something")
 check_username = isNaN(parseFloat(user_input))
 
 if(check_username){
-    console.log(`${user_input) is a STRING`) 
+    console.log(`${user_input} is a STRING`)
+}
+else{
+    let num_input = parseFloat(user_input)
+    if(num_input > 0){
+        console.log(`${num_input} is a POSITIVE number`)
+    }
+    else if(num_input < 0){
+        console.log(`${num_input} is a NEGATIVE number`)
+    }
+    else if(num_input === 0){
+        console.log(`the number is ZERO`)
+    }
+    else{
+        console.log("ERROR: invalid input")
+    }
 }
 
 console.log("\n-------- EXERCISE 2 --------")
 
+let colors = ["red", "green", "orange", "olive", "magenta"]
+let user_color = prompt("Enter a color").toLowerCase()
+
+switch(user_color){
+    case "red":
+        console.log("You selected RED color")
+        break
+    case "green":
+        console.log("You selected GREEN color")
+        break
+    case "orange":
+        console.log("You selected ORANGE color")
+        break
+    case "olive":
+        console.log("You selected OLIVE color")
+        break
+    case "magenta":
+        console.log("You selected MAGENTA color")
+        break
+    default:
+        console.log("Color is not in the list!")
+}
