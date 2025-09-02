@@ -106,6 +106,12 @@ switch (gender) {
 }
 
 console.log("\n-------- EXERCISE 1 --------")
+let user_input = prompt("enter something")
+check_username = isNaN(parseFloat(user_input))
+
+if(check_username){
+    console.log(`${user_input) is a STRING`) 
+}
 
 console.log("\n-------- EXERCISE 2 --------")
 
