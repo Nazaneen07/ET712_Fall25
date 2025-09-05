@@ -84,54 +84,99 @@ console.log(`The collected number is ${number}`)
 
 console.log(`\n ---- example 9: simulate a bank transaction ----`)
 let balance = 1000
-while(true){
-    user_transactions = parseInt(prompt("How can i help you today?\npress 1 for account balance\npress 2 for deposit\npress 3 for withdraw\nAnyy other number to exit"))
-    if(user_transactions <1 || user_transactions > 2){
-        console.log(`Thankyou for visiting QCC Bank!`)
-        break
-    }
-    switch(user_transactions){
+
+while (true) {
+    let user_transactions = parseInt(prompt(
+        "How can I help you today?\n" +
+        "press 1 for account balance\n" +
+        "press 2 for deposit\n" +
+        "press 3 for withdraw\n" +
+        "Any other number to exit"
+    ))
+
+    switch (user_transactions) {
         case 1:
-            console.log(`your balance is $ ${balance}`)
+            console.log(`Your balance is $${balance}`)
             break
+
         case 2:
             let deposit = parseInt(prompt("How much do you want to deposit?"))
-            if (deposit>0){
-                balance += deposit 
-            }
-            else{
-                console.log(`Error! invalid amount`)
+            if (deposit > 0) {
+                balance += deposit
+                console.log(`Deposit successful. New balance: $${balance}`)
+            } else {
+                console.log("Error! Invalid amount.")
             }
             break
+
+        case 3:
+            let withdraw = parseInt(prompt("How much do you want to withdraw?"))
+            if (withdraw > 0 && withdraw <= balance) {
+                balance -= withdraw
+                console.log(`Withdrawal successful. New balance: $${balance}`)
+            } else {
+                console.log("Error! Invalid amount or insufficient funds.")
+            }
+            break
+
         default:
-            console.log(`Thank you for visiting QCC Bank!`)
-            break
-            
+            console.log("Thank you for visiting QCC Bank!")
+            break; // leaves the switch
     }
-    
+
+    if (user_transactions < 1 || user_transactions > 3) {
+        break; // exits the while loop
+    }
 }
+
 
 // example b set it to true, fix example 9 
 
 console.log("------ EXCERCISE A------")
 
+let num = [-3, 10, 0, 8, -9, 5, -2, 8, 6, -1]
+
+// counters for positive and negative sums
+let positive_sum = 0
+let negative_sum = 0
+
+// loop through the array
+for (let index = 0; index < num.length; index++) {
+    if (num[index] > 0) {
+        positive_sum = positive_sum + num[index]
+    }
+    else if (num[index] < 0) {
+        negative_sum = negative_sum + num[index]
+    }
+}
+
+// print results
+console.log(`Sum of all negative numbers = ${negative_sum}`)
+console.log(`Sum of all positive numbers = ${positive_sum}`)
+
+
 console.log("------ EXCERCISE B------")
 let PIN = 1234
 let attempt_counter = 3
-while(true){
-    //collect a pin number
+
+while (true) {
+    // collect a pin number
     let user_pin = parseInt(prompt("Enter a pin number"))
-    // if pin doesnt match
-    if(){
-        user_pin = parseInt(prompt("Enter a pin number"))
-        attempt_counter --
+
+    // if pin doesn't match
+    if (user_pin !== PIN) {
+        attempt_counter--
+        console.log("Incorrect PIN")
+
+        // attempt_counter reaches to 0 
+        if (attempt_counter === 0) {
+            console.log("ACCOUNT IS LOCKED")
+            break
+        }
     }
-    else{
-        console.log(`Welcome to your account!`)
+    else {
+        console.log(`Your pin number is correct`)
         break
     }
-    // attempt_counter reaches to 0 
-    if(){
-        console.log("ACCOUNT IS LOCKED")
-    }
 }
+
