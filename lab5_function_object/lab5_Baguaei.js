@@ -80,15 +80,18 @@ const hen = {
 }
 
 // EXAMPLE 8 
-try{
+
 function yell(message=""){
-    console.log(message.toUpperCase().repeat(3))
+    try{
+        console.log(message.toUpperCase().repeat(3))
+    }
+
+catch(error){
+        console.log(error)
+        console.log('please pass a string next time!')
     }
 }
-catch(error){
-    console.log(error)
-    console.log('please pass a string next time!')
-}
-finally{
-    console.log('End of program!')
-}
+
+// EXCERCISE 
+
+
