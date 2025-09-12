@@ -47,8 +47,8 @@ const car ={
 // create an object "myMath" that will calculate the perimeter of the area of a rectangle
 const myMath = {
     // methods
-    perimeter : function(w=0,l=0){ return (2*w)+(2*1) }, 
-    area :function(w=0,l=0){return w*l}
+    perimeter : function(w=0,1=0){ return (2*w)+(2*1) }, 
+    area :function(w=0,1=0){return w*1}
 }
 
 // EXAMPLE 6
