@@ -80,18 +80,58 @@ const hen = {
 }
 
 // EXAMPLE 8 
-
-function yell(message=""){
-    try{
+function yell(message = ""){
+    try {
         console.log(message.toUpperCase().repeat(3))
     }
-
-catch(error){
+    catch(error){
         console.log(error)
-        console.log('please pass a string next time!')
+        console.log('Please pass a string next time!')
     }
 }
 
-// EXCERCISE 
+// ----------------------
+// LAB EXERCISE 1
+// making an object called myCalculator
+const myCalculator = {
+    // this is just a sentence
+    message: "This is my calculator object",
+    // this is the number we will use
+    side: 2,
 
+    // this finds the area of a square
+    area_square: function(){
+        return Math.pow(this.side, 2) // side * side
+    },
+
+    // this finds the volume of a cube
+    volume_cube: function(){
+        return Math.pow(this.side, 3) // side * side * side
+    }
+}
+
+// trying out Lab 1
+console.log("---- Lab Exercise 1 ----")
+console.log(myCalculator.message) 
+console.log("Area of square =", myCalculator.area_square()) 
+console.log("Volume of cube =", myCalculator.volume_cube())
+
+// ----------------------
+// LAB EXERCISE 2
+// function to look for a property
+function readProperty(obj, prop){
+    try {
+        // try to get the thing
+        return obj[prop]
+    }
+    catch (error){
+        // if it breaks, say error
+        return "Error accessing property"
+    }
+}
+
+// trying out Lab 2
+console.log("---- Lab Exercise 2 ----")
+console.log(readProperty({name:"Nazaneen"}, "name")) // should work
+console.log(readProperty(null, "name")) // should say error
 
