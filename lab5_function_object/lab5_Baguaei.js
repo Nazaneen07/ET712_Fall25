@@ -52,7 +52,7 @@ const myMath = {
 }
 
 // EXAMPLE 6
-const cat = {
+const cat = { 
     //properties
     name: "mickey",
     color: "Black with white spots",
