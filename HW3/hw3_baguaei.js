@@ -1,6 +1,7 @@
 /* 
-Nazaneen Baguaei 
-Homework 3 – Objects and exception handling in JS 
+Nazaneen Baguaei
+Homework 3 – Objects and exception handling in JS
+Sep 20, 2025
 */
 
 // Movie class
@@ -44,17 +45,14 @@ class MovieCollection {
       if (this.movies.length === 0) {
         throw new Error("No movies in the collection.");
       }
-      console.log("Movie Collection:");
-      this.movies.forEach(m => {
-        console.log(m.getDetails());
-      });
+      this.movies.forEach(m => console.log(m.getDetails()));
     } catch (error) {
       console.log("Error:", error.message);
     }
   }
 }
 
-// --- Example usage with 2 movies ---
+// Using the classes
 const myCollection = new MovieCollection();
 
 const movie1 = new Movie("Wreck-It Ralph", "Rich Moore", 2012);
@@ -63,7 +61,9 @@ const movie2 = new Movie("Avatar", "James Cameron", 2009);
 myCollection.addMovie(movie1);
 myCollection.addMovie(movie2);
 
-myCollection.showMovies();   // Show both movies
-myCollection.removeMovie("Avatar"); // Removes Avatar
-myCollection.removeMovie("Frozen"); // Error: not found
-myCollection.showMovies();   // Show remaining movies
+myCollection.showMovies();
+myCollection.removeMovie("Avatar");
+myCollection.removeMovie("Frozen"); // error example
+myCollection.showMovies();
+
+hekowqdqon
