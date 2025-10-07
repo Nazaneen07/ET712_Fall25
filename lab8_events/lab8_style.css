@@ -1,0 +1,77 @@
+*{box-sizing: border-box;}
+img{width: 100%; display: block;}
+.btnpressme{
+    padding: 0.5em 2em;
+    color: whitesmoke;
+    border-radius: 8px;
+    background-color: rgb(50, 50, 50);
+}
+.btnactive{
+    background-color: crimson;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+#list li{
+    width: 200px;
+    padding: 1em 2em;
+    border: lightblue 1px solid;
+    list-style: none;
+    display: flex;
+}
+#list li span{
+    display: inline-block;
+    margin-left: auto;
+    width: 20%;
+}
+#list li:hover{
+    cursor: pointer;
+    background-color: yellow;
+}
+
+/* WINDOW EVENT*/
+#content{
+    width: 2000px;
+    background-color: lightblue;
+    padding: 20px;
+}
+
+/* photo gallery scrolling*/
+.gallery-container, .maincontainer{
+    width: 1000px;
+    margin: auto;
+}
+.maincontainer{
+    position: relative;
+    z-index: 0;
+}
+.gallery-container{
+    position: relative;
+    z-index: 1;
+    overflow-x: scroll; /* enable horizontal scrolling*/
+    white-space: nowrap; /* ensure all images stay on the same line*/
+}
+.gallery-image{
+    display: inline-block;
+    width: 50%;
+    height: 650px;
+}
+.btnright, .btnleft{
+    position: absolute;
+    z-index: 2;
+    top: 40%; 
+    font-size: 3em;
+    color: chartreuse;  
+    background-color: rgba(255,255,255,0);
+    border: none;
+}
+.btnright:hover, .btnleft:hover{
+    color: crimson;
+    cursor: pointer;
+}
+.btnleft{
+    left: 0%;
+}
+.btnright{
+    right: 0%;
+}
+
