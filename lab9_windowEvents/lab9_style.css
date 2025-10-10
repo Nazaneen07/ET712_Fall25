@@ -11,13 +11,14 @@ html{scroll-behavior: smooth;}
     top: 0%;
     right: 0%;
 }
+
 .images_container {
     width: 90%;
     margin: auto;
     background-color: aliceblue;
     display: flex;
-    flex-direction: column; /* stack top to bottom */
-    align-items: center;    /* center images horizontally */
+    flex-direction: column;
+    align-items: center;
 }
 
 .img_gallery{
@@ -25,7 +26,7 @@ html{scroll-behavior: smooth;}
     margin: 2em;
 }
 
-/* to the top*/
+/* to the top */
 .totop{
     background-color: rgba(150, 150, 150, 0.8);
     width: 60px;
@@ -42,7 +43,7 @@ html{scroll-behavior: smooth;}
     color: orangered;
 }
 
-/* modal window*/
+/* modal window */
 .openmodal{
     overflow: hidden;
     border-radius: 12px;
@@ -72,18 +73,28 @@ html{scroll-behavior: smooth;}
     cursor: pointer;
     font-weight: bolder;
 }
-.close_btn:hover{
-    color: crimson;
-}
+.close_btn:hover{ color: crimson; }
 .modal h2{
     text-align: center;
     padding: 1em;
     color: darkblue;
 }
-.modal_info{
-    display: flex;
+.modal_info{ display: flex; }
+.modal_img, .modal_p{ width: 50%; padding: 2rem; }
+
+/* LAB EXERCISE */
+.labexercise_header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: lightblue;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.5em;
+    color: darkblue;
+    z-index: 1000;
 }
-.modal_img, .modal_p{
-    width: 50%;
-    padding: 2rem;
+body{
+    margin-top: 100px;
 }

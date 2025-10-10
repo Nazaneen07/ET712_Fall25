@@ -1,5 +1,6 @@
 let displaypexels = document.querySelector(".displaypexels")
-//read the pixels from the y axis 
+
+// read the pixels from the y axis
 window.addEventListener("scroll", function(){
     let y_pixels = window.scrollY
     displaypexels.innerHTML = `${y_pixels} px away from the top`
@@ -34,7 +35,34 @@ const close_btn = document.querySelector("#closeBtn")
 openmodal1.addEventListener("click", function(){
     modalOverlay.style.display = "block"
 })
-
 close_btn.addEventListener("click", function(){
     modalOverlay.style.display = "none"
+})
+
+/* LAB EXERCISE */
+// Scroll Event: Change header background when scrolling
+const labHeader = document.querySelector(".labexercise_header")
+
+window.addEventListener("scroll", function(){
+    let y = window.scrollY
+    if (y > 100) {
+        labHeader.style.backgroundColor = "lightgreen"
+    } else {
+        labHeader.style.backgroundColor = "lightblue"
+    }
+})
+
+// Resize Event: Change header text color depending on width
+window.addEventListener("resize", function(){
+    let width = window.innerWidth
+
+    if (width > 1000) {
+        labHeader.style.color = "blue"
+    } else if (width > 700) {
+        labHeader.style.color = "green"
+    } else if (width > 300) {
+        labHeader.style.color = "orange"
+    } else {
+        labHeader.style.color = "black"
+    }
 })
