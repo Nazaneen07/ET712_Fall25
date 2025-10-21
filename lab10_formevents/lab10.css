@@ -36,8 +36,15 @@ img{width: 100%; display: block;}
 .form_input{
     padding: 0.5rem 1rem;
     background: lightblue;
-    border: none;
+    border: darkblue 3px solid;
     border-radius: 5x;
+}
+.active_input_invalid{
+    border: crimson 3px solid;
+}
+.active_input_valid{
+    border: green 3px solid;
+    box-shadow: 0px 0px 5px 1px green;
 }
 .greeting{
     display: none;

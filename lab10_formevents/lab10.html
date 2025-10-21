@@ -8,22 +8,40 @@
 </head>
 <body>
     <h1>Nazaneen Baguaei</h1>
-    <form class="myform">
+    <form class="myform" id="form1">
         <legend class="legend">user info</legend>
         <section class="formcontrol">
             <label class="form_label" for="username">Enter user name: </label>
-            <input class="form_input" type="text" id="username" maxlength="20" placeholder="type username...">
+            <input class="form_input" type="text" id="username" 
+            maxlength="20" placeholder="type username...">
             <p class="username_error_msg"></p>
         </section>
 
-        <input type="submit" value="SUBMIT" class="btnsubmit">
+        <section class="formcontrol">
+            <label for="password" class="form_label">Enter a password:</label>
+            <input type="password" id="password" class="form_input" placeholder="type your password...">
+        </section>
+
+        <input type="submit" value="SUBMIT" 
+        class="btnsubmit">
 
         <!--display a welcome message-->
         <div class="greeting">
-            <p>Welcome to form events <span class="display_username">username</span></p>
+            <p>Welcome to form events <span 
+            class="display_username">username</span></p>
         </div>
     </form>
 
+    <form class="myform">
+        <h2>Unscramble the word!</h2>
+        <p>Shuffled word: <strong id="shuffledword"></strong></p>
+        
+        <section class="formcontrol">
+            <input type="text" id="guessInput" 
+            class="form_input" placeholder="Type the correct word!">
+            <p id="wordfeedback"></p>
+        </section>
+    </form>
 
     <script src="lab10_scripts.js"></script>
 </body>
