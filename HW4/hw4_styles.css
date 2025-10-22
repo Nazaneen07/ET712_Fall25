@@ -1,0 +1,78 @@
+/* general styling */
+body {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    background-color: #f0f8ff;
+}
+
+h1, h2 {
+    text-align: center;
+    color: blueviolet;
+}
+
+/* Form styling */
+form {
+    width: 50%;
+    margin: 1rem auto;
+    background: aliceblue;
+    padding: 1rem;
+    box-shadow: 1px 1px 5px gray;
+    border-radius: 5px;
+}
+
+input {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    width: 100%;
+    border: 2px solid darkblue;
+    border-radius: 5px;
+}
+
+.errorMsg {
+    color: crimson;
+    font-size: 0.8rem;
+}
+
+.successMsg {
+    color: green;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+/* Card Gallery Styling */
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cards-wrapper {
+    display: flex;             
+    overflow: hidden;          
+    width: 690px;              /* 3 cards * 200px + 2*15px margin */
+    scroll-behavior: smooth;   /* smooth scroll */
+}
+
+.card {
+    flex: 0 0 200px;           
+    margin-right: 15px;        /* spacing between cards */
+    background: lightblue;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.card:last-child {
+    margin-right: 0;           /* last card has no extra margin */
+}
+
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+

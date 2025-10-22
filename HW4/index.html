@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 4 By Nazaneen Baguaei</title>
+    <link rel="stylesheet" href="hw4_styles.css">
+</head>
+<body>
+    <h1>HW4 - Form Validation & Card Gallery</h1>
+
+    <!-- Exercise 1: Form Validation -->
+    <form id="registrationForm">
+        <h2>Register</h2>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" placeholder="Enter full name">
+        <div id="nameError" class="errorMsg"></div>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" placeholder="Enter email">
+        <div id="emailError" class="errorMsg"></div>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <div id="passwordError" class="errorMsg"></div>
+
+        <input type="submit" value="Submit">
+        <div id="successMsg" class="successMsg"></div>
+    </form>
+
+    <hr>
+
+    <!-- Exercise 2: Card Gallery -->
+    <h2>Card Gallery</h2>
+    <div class="gallery-container">
+        <button id="leftBtn">&lt;</button>
+        <div class="cards-wrapper">
+            <div class="card"><img src="images/card1.jpg" alt=""><h3>Card 1</h3><p>A house on the lake</p></div>
+            <div class="card"><img src="images/card2.jpg" alt=""><h3>Card 2</h3><p>The misty forest</p></div>
+            <div class="card"><img src="images/card3.jpg" alt=""><h3>Card 3</h3><p>Summertime bliss</p></div>
+            <div class="card"><img src="images/card4.jpg" alt=""><h3>Card 4</h3><p>A dream</p></div>
+            <div class="card"><img src="images/card5.jpg" alt=""><h3>Card 5</h3><p>cultural festivals</p></div>
+            <div class="card"><img src="images/card6.jpg" alt=""><h3>Card 6</h3><p>Night time tokyo</p></div>
+        </div>
+        <button id="rightBtn">&gt;</button>
+    </div>
+
+    <script src="hw4_scripts.js"></script>
+</body>
+</html>
