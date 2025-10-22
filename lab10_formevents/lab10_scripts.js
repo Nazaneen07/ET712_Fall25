@@ -116,3 +116,48 @@ guessInput.addEventListener("input", function(){
         guessInput.classList.add("active_input_invalid")
     }
 })
+
+// LAB EXCERCISE
+// Username availability checker
+const takenUsernames = ['admin', 'user123', 'testuser', 'guest', 'peterpan']
+
+// collect username input for the mini-registration form
+const usernameCheckerInput = document.querySelector("#username")
+const usernameCheckerMsg = document.querySelector(".username_error_msg")
+const submitBtn = document.querySelector(".btnsubmit")
+
+// check username availability in real time
+usernameCheckerInput.addEventListener("input", function() {
+    const enteredName = usernameCheckerInput.value.trim().toLowerCase()
+
+    if (enteredName.length === 0) {
+        usernameCheckerMsg.textContent = ""
+        usernameCheckerInput.classList.remove("active_input_valid")
+        usernameCheckerInput.classList.remove("active_input_invalid")
+        submitBtn.disabled = true
+        return
+    }
+
+    if (takenUsernames.includes(enteredName)) {
+        usernameCheckerMsg.textContent = "Username is taken"
+        usernameCheckerMsg.style.color = "crimson"
+        usernameCheckerInput.classList.add("active_input_invalid")
+        usernameCheckerInput.classList.remove("active_input_valid")
+        submitBtn.disabled = true
+    } else {
+        usernameCheckerMsg.textContent = "Username is available"
+        usernameCheckerMsg.style.color = "green"
+        usernameCheckerInput.classList.add("active_input_valid")
+        usernameCheckerInput.classList.remove("active_input_invalid")
+        submitBtn.disabled = false
+    }
+})
+
+// prevent form submission if username is taken
+myform.addEventListener("submit", function(event){
+    const enteredName = usernameCheckerInput.value.trim().toLowerCase()
+    if (takenUsernames.includes(enteredName)) {
+        event.preventDefault()
+        alert("Cannot submit: username is taken")
+    }
+})
