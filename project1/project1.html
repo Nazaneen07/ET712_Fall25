@@ -1,5 +1,5 @@
 <!-- Nazaneen Baguaei -->
-<!-- Project 1 - Pre-K Learning Fun -->
+<!-- Pre-K Learning Fun! -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +11,12 @@
     <script src="project1_script.js" defer></script>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <h1>Welcome to Pre-K Learning Fun!</h1>
         <nav>
             <ul>
+                <li><a href="#signin">Sign In</a></li>
                 <li><a href="#animals">Animals</a></li>
                 <li><a href="#colors">Colors</a></li>
                 <li><a href="#numbers">Numbers</a></li>
@@ -23,38 +25,51 @@
         </nav>
     </header>
 
+    <!-- Sign In Section -->
+    <section id="signin">
+        <h2>Sign In!</h2>
+        <form id="myform">
+            <div class="formcontrol">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter username...">
+            </div>
+            <div class="formcontrol">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter email...">
+            </div>
+            <div class="formcontrol">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password...">
+                <p>Password must be ≥5 characters and include #, $, or %</p>
+            </div>
+            <button type="submit" class="btnsubmit">Submit Form</button>
+        </form>
+    </section>
+
     <!-- Animals Section -->
     <section id="animals">
         <h2>Learn Animals!</h2>
+        <p>Click an animal to see what sound it makes!</p>
         <div class="cards">
-            <div class="card"><img src="images/animals1.png" alt="Dog"><p>Dog</p></div>
-            <div class="card"><img src="images/animal2.png" alt="Cat"><p>Cat</p></div>
-            <div class="card"><img src="images/animal3.png" alt="Crocodile"><p>Crocodile</p></div>
-            <div class="card"><img src="images/animal4.png" alt="Bird"><p>Bird</p></div>
-            <div class="card"><img src="images/animal5.png" alt="Elephant"><p>Elephant</p></div>
-            <div class="card"><img src="images/animal6.png" alt="Giraffe"><p>Giraffe</p></div>
-            <div class="card"><img src="images/animal7.png" alt="Zebra"><p>Zebra</p></div>
-            <div class="card"><img src="images/animal8.png" alt="Lion"><p>Lion</p></div>
-            <div class="card"><img src="images/animal9.png" alt="Duck"><p>Duck</p></div>
-            <div class="card"><img src="images/animal10.png" alt="Monkey"><p>Monkey</p></div>
+            <div class="card" data-sound="Woof woof!"><img src="images/animals1.png" alt="Dog"><p>Dog</p></div>
+            <div class="card" data-sound="Meow!"><img src="images/animal2.png" alt="Cat"><p>Cat</p></div>
+            <div class="card" data-sound="Snap snap!"><img src="images/animal3.png" alt="Crocodile"><p>Crocodile</p></div>
+            <div class="card" data-sound="Tweet tweet!"><img src="images/animal4.png" alt="Bird"><p>Bird</p></div>
+            <div class="card" data-sound="Trumpet!"><img src="images/animal5.png" alt="Elephant"><p>Elephant</p></div>
+            <div class="card" data-sound="Munch munch!"><img src="images/animal6.png" alt="Giraffe"><p>Giraffe</p></div>
+            <div class="card" data-sound="Neigh!"><img src="images/animal7.png" alt="Zebra"><p>Zebra</p></div>
+            <div class="card" data-sound="Roar!"><img src="images/animal8.png" alt="Lion"><p>Lion</p></div>
+            <div class="card" data-sound="Quack quack!"><img src="images/animal9.png" alt="Duck"><p>Duck</p></div>
+            <div class="card" data-sound="Ooh ooh ah ah!"><img src="images/animal10.png" alt="Monkey"><p>Monkey</p></div>
         </div>
+        <div class="animal-response" id="animal-response"></div>
     </section>
 
     <!-- Colors Section -->
     <section id="colors">
-        <h2>Learn Colors!</h2>
-        <div class="cards">
-            <div class="card"><img src="images/blue.png" alt="Blue"><p>Blue</p></div>
-            <div class="card"><img src="images/green.png" alt="Green"><p>Green</p></div>
-            <div class="card"><img src="images/red.png" alt="Red"><p>Red</p></div>
-            <div class="card"><img src="images/yellow.png" alt="Yellow"><p>Yellow</p></div>
-            <div class="card"><img src="images/orange.png" alt="Orange"><p>Orange</p></div>
-            <div class="card"><img src="images/purple.png" alt="purple"><p>Purple</p></div>
-            <div class="card"><img src="images/black.png" alt="Black"><p>Black</p></div>
-            <div class="card"><img src="images/white.png" alt="white"><p>White</p></div>
-            <div class="card"><img src="images/gray.png" alt="gray"><p>Gray</p></div>
-            <div class="card"><img src="images/navy.png" alt="Navy blue"><p>Navy Blue</p></div>
-        </div>
+        <h2>Guess the Color!</h2>
+        <p>Click the circle to see a new color!</p>
+        <div class="circle" onclick="changeColor()">Red</div>
     </section>
 
     <!-- Numbers Section -->
@@ -68,7 +83,7 @@
             <div class="card"><img src="images/five.png" alt="Five"><p>5</p></div>
             <div class="card"><img src="images/six.png" alt="Six"><p>6</p></div>
             <div class="card"><img src="images/seven.png" alt="Seven"><p>7</p></div>
-            <div class="card"><img src="images/eight.png" alt="eight"><p>8</p></div>
+            <div class="card"><img src="images/eight.png" alt="Eight"><p>8</p></div>
             <div class="card"><img src="images/nine.png" alt="Nine"><p>9</p></div>
             <div class="card"><img src="images/ten.png" alt="Ten"><p>10</p></div>
         </div>
@@ -76,21 +91,29 @@
 
     <!-- Shapes Section -->
     <section id="shapes">
-        <h2>Learn Shapes!</h2>
-        <div class="cards">
-            <div class="card"><img src="images/square.png" alt="Square"><p>Square</p></div>
-            <div class="card"><img src="images/circle.png" alt="Circle"><p>Circle</p></div>
-            <div class="card"><img src="images/rectangle.png" alt="Rectangle"><p>Rectangle</p></div>
-            <div class="card"><img src="images/triangle.png" alt="Triangle"><p>Triangle</p></div>
-            <div class="card"><img src="images/oval.png" alt="Oval"><p>Oval</p></div>
-            <div class="card"><img src="images/diomand.png" alt="Diamond"><p>Diamond</p></div>
-            <div class="card"><img src="images/pentagon.png" alt="Pentagon"><p>Pentagon</p></div>
-            <div class="card"><img src="images/star.png" alt="Star"><p>Star</p></div>
-            <div class="card"><img src="images/hexagon.png" alt="Hexagon"><p>Hexagon</p></div>
-            <div class="card"><img src="images/octagon.png" alt="Octagon"><p>Octagon</p></div>
+        <h2>Change the Shape!</h2>
+        <p>Click a button to make a new shape appear.</p>
+        <div class="shape-container">
+            <div class="shape"></div>
+            <div class="btnposition">
+                <button onclick="createShape('triangle')">Triangle</button>
+                <button onclick="createShape('oval')">Oval</button>
+                <button onclick="createShape('hexagon')">Hexagon</button>
+                <button onclick="createShape('diamond')">Diamond</button>
+                <button onclick="createShape('octagon')">Octagon</button>
+                <button onclick="createShape('square')">Square</button>
+                <button onclick="createShape('star')">Star</button>
+                <button onclick="createShape('rectangle')">Rectangle</button>
+                <button onclick="createShape('crescent')">Crescent</button>
+                <button onclick="createShape('moon')">Moon</button>
+            </div>
         </div>
     </section>
 
+    <!-- Go to top button -->
+    <button id="topBtn" title="Go to top">⬆</button>
+
+    <!-- Footer -->
     <footer>
         <p>© 2025 Pre-K Learning Fun | Made by Nazaneen Baguaei</p>
     </footer>
