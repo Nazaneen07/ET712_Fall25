@@ -1,264 +1,237 @@
-/* Nazaneen Baguaei */
-/* Pre-K Learning Fun! */
+/* Nazaneen Baguaei - Pre-K Learning Fun! */
 
-body {
-    background-color: #f2e5ff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+/* Global styles */
+* {
+  box-sizing: border-box;
 }
 
-/* Header */
+body {
+  background-color: #f2e5ff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Header and navigation */
 header {
-    background-color: #b266ff;
-    color: white;
-    padding: 15px;
+  background-color: #b266ff;
+  color: white;
+  padding: 15px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2em;
+  margin: 0;
+  font-size: 2em;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0 8px;
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav a {
-    color: white;
-    background-color: #a14fff;
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-weight: bold;
+  background-color: #a14fff;
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin: 5px;
+  font-weight: bold;
 }
 
 nav a:hover {
-    background-color: #8a39e1;
+  background-color: #8a39e1;
 }
 
 /* Section titles */
 h2 {
-    color: #6b21a8;
-    margin-top: 25px;
+  color: #6b21a8;
+  margin-top: 25px;
 }
 
-/* Cards */
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 15px 0;
-}
-
-.card {
-    background-color: white;
-    border: 2px solid #d6b3ff;
-    width: 120px;
-    padding: 8px;
-    border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.card:hover {
-    transform: scale(1.15);
-    box-shadow: 5px 5px 12px rgba(0,0,0,0.2);
-}
-
-/* Animal response */
-.animal-response {
-    margin-top: 15px;
-    font-size: 1.5em;
-    color: darkblue;
-    font-weight: bold;
-}
-
-/* Colors */
-.circle {
-    width: 200px;
-    height: 200px;
-    background-color: red;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 20px auto;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
-}
-
-/* Shapes */
-.shape-container {
-    position: relative;
-    margin-top: 20px;
-}
-
-.shape {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    background-color: red;
-    transition: all 0.5s;
-}
-
-.btnposition {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-button {
-    margin: 5px;
-    padding: 10px 12px;
-    cursor: pointer;
-    background-color: #b266ff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #a14fff;
-}
-
-/* Sign In Section */
+/* Sign-in section */
 #signin {
-    margin: 30px 0;
-    padding: 15px;
-    background-color: #e6ccff;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#signin h2 {
-    margin-bottom: 15px;
+  background-color: #e6ccff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 15px;
 }
 
 .formcontrol {
-    margin: 10px 0;
-    text-align: left;
+  margin: 10px 0;
+  text-align: left;
 }
 
 .formcontrol label {
-    display: block;
-    margin-bottom: 4px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
 }
 
 .formcontrol input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #a14fff;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #a14fff;
 }
 
 .btnsubmit {
-    width: 100%;
-    padding: 10px;
-    background-color: #6b21a8;
-    border: none;
-    color: white;
-    font-size: 1.1em;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #6b21a8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .btnsubmit:hover {
-    background-color: #8a39e1;
+  background-color: #8a39e1;
 }
 
-/* Modal */
+/* Animal cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.card {
+  background-color: white;
+  border: 2px solid #d6b3ff;
+  width: 120px;
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.15);
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.animal-response {
+  margin-top: 15px;
+  font-size: 1.5em;
+  color: darkblue;
+  font-weight: bold;
+}
+
+/* Color circle */
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Shapes section */
+.shape-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.shape {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: red;
+  transition: all 0.5s;
+}
+
+.btnposition {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 12px;
+  background-color: #b266ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #a14fff;
+}
+
+/* Popup message */
 .modal {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #6b21a8;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 1.2em;
-    animation: fadeInOut 1.5s;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #6b21a8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  animation: fadeInOut 1.5s;
 }
 
 @keyframes fadeInOut {
-    0% { opacity: 0; transform: translate(-50%, 20px); }
-    20% { opacity: 1; transform: translate(-50%, 0); }
-    80% { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, 20px); }
+  0% { opacity: 0; transform: translate(-50%, 20px); }
+  20% { opacity: 1; transform: translate(-50%, 0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 20px); }
 }
 
-/* Top button */
+/* Go to top button */
 #topBtn {
-    display: none;
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #8a39e1;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    padding: 10px 15px;
-    cursor: pointer;
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #8a39e1;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
 }
 
 #topBtn:hover {
-    background-color: #6b21a8;
+  background-color: #6b21a8;
 }
 
 /* Footer */
 footer {
-    margin-top: 40px;
-    background-color: #b266ff;
-    color: white;
-    padding: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .cards {
-        gap: 10px;
-    }
-    .card { width: 100px; }
-    .shape { width: 150px; height: 150px; }
-    .circle { width: 150px; height: 150px; font-size: 1.2em; }
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-    .cards { gap: 15px; }
-    .card { width: 120px; }
-    .shape { width: 200px; height: 200px; }
-    .circle { width: 180px; height: 180px; font-size: 1.4em; }
-}
-
-@media (min-width: 901px) {
-    .cards { gap: 20px; }
-    .card { width: 140px; }
-    .shape { width: 220px; height: 220px; }
-    .circle { width: 200px; height: 200px; font-size: 1.5em; }
+  background-color: #b266ff;
+  color: white;
+  padding: 10px;
+  margin-top: 40px;
 }
