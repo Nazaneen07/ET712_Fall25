@@ -1,0 +1,54 @@
+*{box-sizing: border-box;}
+img{width: 100%; display: block;}
+
+/**/
+
+
+.author {
+  display: block;
+  text-align: center;
+  font-weight: bolder;
+  margin: 0 auto;
+}
+.metadata, .comment{
+    text-align: center;
+}
+.date{
+    font-style: italic;
+    color: darkblue;
+    font-weight: bolder;
+}
+
+/* app.js */
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/**/
+.feedbackcard{
+    width: 300 px;
+    border: solid 1px gray;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+.cardfooter{
+    background-color: gray;
+    padding: 1rem;
+    color: aliceblue;
+}
+.feedbackcontainer{
+    margin: 1rem;
+}
+.feedbackcontainer:hover{
+    box-shadow: 0px 0px 5px 1px gray;
+    transform: scale(1.01);
+    overflow: hidden;
+    border-radius: 10px;
+.content{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding: 1rem;
+}
