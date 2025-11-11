@@ -1,7 +1,13 @@
 import React from "react";
 import './App.css'
 
-const User_feedback = function(){
+const User_feedback = function(props){
+    //open modal window 
+    const openmodalwindow = () => {
+        const modalwindow = document.querySelector(".modalWindow")
+        modalwindow.computedStyleMap.display = "block"
+    }
+
     return(
         <>
             <div className="feedbackcontainer">
@@ -9,10 +15,13 @@ const User_feedback = function(){
                     <div className="conent">{props.username}</div>
                     <div className="description">{props.children}</div>
                     <div className="cardfooter">
-                        <p className="addicon"><span>&#10011;</span>Add feedback</p>
+                        <p className="addicon" onClick={openmodalwindow}><span>&#10011;</span>Add feedback</p>
                     </div>
                 </section>
             </div>
+
+            {/* modal window */}
+            <Modalwindow/>
         </>
     )
 }
