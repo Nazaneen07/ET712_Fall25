@@ -34,7 +34,7 @@ img {
   flex-wrap: wrap;
 }
 
-/**/
+/* user_feedback */
 .feedbackcard {
   width: 300px;
   border: solid 1px gray;
@@ -67,8 +67,9 @@ img {
 }
 
 /* modalwindow.js */
-.modalWindow{
+.modalwindow{
     background-color: rgba(50,50,50, 0.7);
+    display: none;
     position: fixed;
     top: 0%; bottom: 0%; left: 0%; right: 0%;
     
@@ -78,12 +79,12 @@ img {
     width: 500px;
     margin: 100px auto; 
 }
-.modelHeader{
+.modelheader{
     border-bottom: ridge 1px lightblue;
     display: flex ;
 
 }
-.modelHeader p:nth-child(1){
+.modelheader p:nth-child(1){
     font-size: 1.2rem;
     text-align: center;
     width: 80%;
