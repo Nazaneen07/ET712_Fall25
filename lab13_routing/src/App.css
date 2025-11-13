@@ -1,0 +1,51 @@
+*{box-sizing: border-box;}
+img{width: 100%; display: block;}
+.title{
+  text-align: center;
+  color: blueviolet;
+}
+/* navbar.js */
+.navbar{
+  background-color: aliceblue;
+  width: 900px;
+  margin: auto;
+  display: flex;
+  padding: 2rem;
+  font-size: 2rem;
+  justify-content: right;
+}
+.qcclink{width: 20%;}
+.qcclink a{color: blueviolet; text-decoration: none; font-weight: bolder;}
+.btngroup{width: 80%; margin-right: auto;}
+.btngroup button{background-color: aliceblue; width: 20%; font-size: 1.5rem; text-decoration: none; border: none; }
+
+.qcclink a:hover, .btngroup:hover{
+color: crimson;
+}
+
+/* about.js */
+.headertitle{text-align: center;}
+
+/* home.js */
+.maincontainer{
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 900px;
+  margin: 2rem auto;
+}
+.cardimg{
+  width: 40%;
+  margin: 2%;
+  border: 10px;
+  overflow: hidden;
+  box-shadow: 1px 1px 5px gray;
+  border-radius: 10%;
+  transition: ease-in-out 200ms;
+}
+.cardimg:hover{
+  cursor: pointer;
+  transform: scale(0.99);
+  box-shadow: none;
+  opacity: 0.7;
+}
