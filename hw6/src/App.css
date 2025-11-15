@@ -1,6 +1,17 @@
+
 .App {
   font-family: Arial, sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
+.App {
+  text-align: center;
+  background-color: #fff2cb; /* light pastel green, Studio Ghibli vibe */
+  min-height: 100vh; /* make sure it covers full viewport height */
+  padding: 20px;
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* keeps playful feel */
+}
+
+
+
