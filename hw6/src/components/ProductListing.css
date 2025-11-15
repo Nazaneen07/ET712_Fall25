@@ -1,0 +1,17 @@
+.product-listing-container {
+    margin-bottom: 30px;
+  }
+  
+  .product-listing-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  
