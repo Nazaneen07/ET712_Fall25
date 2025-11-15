@@ -32,6 +32,13 @@ function App() {
         </User_feedback>
       </section>
 
+      {/**  COMMENT LIST */}
+      <section className='postcomment'>
+        <ul className='commentlist'>
+          <li>Testing</li>
+        </ul>
+      </section>
+
     </>
   );
 }

@@ -33,6 +33,17 @@ img {
   justify-content: center;
   flex-wrap: wrap;
 }
+.postcomment{
+  width: 980px;
+  background-color: rgb(240, 240, 240);
+  margin: 3rem auto;
+}
+.commentlist{
+  list-style: none;
+  background-color: white;
+  padding: 1rem;
+  border: solid 1px rgb(240, 240, 240);
+}
 
 /* user_feedback */
 .feedbackcard {
