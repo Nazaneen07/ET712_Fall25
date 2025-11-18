@@ -6,13 +6,11 @@ const message = ["I think, therefore i am", "I have a dream", "The only thing we
 
 function App() {
 
-// set initial state
-const [counter, setCounter] = useState(1)
+  // set initial state
+  const [counter, setCounter] = useState(1)
 
-// set initial state (open and close)
-const [isOpen, setisOpen] = useState(true)
-
-
+  // set initial state (open and close)
+  const [isOpen, setisOpen] = useState(false)
 
   return (
     <div className="App">
@@ -21,38 +19,52 @@ const [isOpen, setisOpen] = useState(true)
       {/** Slice cards */}
       <section className='slidewrapper'>
         <div className='numberwrapper'>
-          <p className='msg'>{counter} ------ {message [counter-1]} </p>
+          <p className='msg'>{message[counter-1]} </p>
           <div className={counter==1 ? "active" : ""}> <p>1</p> </div>
           <div className={counter==2 ? "active" : ""}> <p>2</p> </div>
           <div className={counter==3 ? "active" : ""}> <p>3</p> </div>
         </div>
 
-
         <div className='btngroup'>
-          <button onClick={function(){if(counter>1)setCounter(counter-1)}}>Previous</button>
-          <button onClick={function(){if(counter<message.length)setCounter(counter+1)}}>Next</button>
+          <button onClick={function(){
+            // Wrap around Previous
+            if(counter > 1){
+              setCounter(counter - 1)
+            } else {
+              setCounter(message.length) // go to last message
+            }
+          }}>Previous</button>
+
+          <button onClick={function(){
+            // Wrap around Next
+            if(counter < message.length){
+              setCounter(counter + 1)
+            } else {
+              setCounter(1) // go back to first message
+            }
+          }}>Next</button>
         </div>
       </section>
 
-
       {/** Open and close */}
       <section className='info'>
-        <p><b>Cat (Felis catus</b>, commenly reffered to as a domestic cat or hous car <button className='readmorebtn' onClick={function(){setisOpen(!isOpen)}}>{isOpen ? "Hide" : "read More"}</button></p>
+        <p>
+          <b>Cat (Felis catus</b>, commenly reffered to as a domestic cat or house cat
+          <button className='readmorebtn' onClick={function(){setisOpen(!isOpen)}}>
+            {isOpen ? "Hide" : "read More"}
+          </button>
+        </p>
 
         <section>
           {
             isOpen && (
               <div className='readmore'>
-                <p>The cat, Commonly reffered to ad domestic cat or house cat, is a small domesticated carnivorous mammal. It is the only domesticated species of the family Felidae</p>
+                <p>The cat, commonly referred to as domestic cat or house cat, is a small domesticated carnivorous mammal. It is the only domesticated species of the family Felidae.</p>
               </div>
             )
           }
         </section>
-
       </section>
-
-
-
     </div>
   );
 }
