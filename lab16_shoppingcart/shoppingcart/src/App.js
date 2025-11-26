@@ -4,41 +4,43 @@ import ProductList from './components/productlist';
 import Cart from './components/cart';
 
 function App() {
+
   const [cart, setCart] = useState([])
 
-  {/** find if the product already existes in the cart */}
-  const addToCart = ()=> {
-    const exist = cart.find((item)=>item.id===ProductList.id)
-    
-    {/** if product exists, exist ==True, increase the quantity */}
+  // add stuff to cart
+  const addToCart = (product) => {
+
+    // check if product already in cart
+    const exist = cart.find((item)=> item.id === product.id)
+
     if(exist){
+      // increase qty by 1
       setCart(
-        cart.map((item) => {
-          if(item.id === ProductList.id){
-          return {...item, qty: item.qty + 1}
+        cart.map((item)=>{
+          if(item.id === product.id){
+            return {...item, qty: item.qty + 1}
+          } else {
+            return item
           }
-          else
-            return item 
         })
       )
-    }
-    /** if product does not exist, add new item */
-    else{
-      setCart([...cart, {...ProductList, qty: 1}])
+    } else {
+      // new item
+      setCart([...cart, {...product, qty: 1}])
     }
   }
 
-  {/** remove item from cart */}
+  // remove item by id
   const removeFromCart = (id)=>{
-    setCart(cart.filter((item)=>item.id !==id))
+    setCart(cart.filter((item)=> item.id !== id))
   }
+
   return (
     <div className="App">
       <h1 className='apptitle'>Welcome to Nazaneen Baguaei's supermarket</h1>
-      
-      <ProductList addToCart = {addToCart} />
-      <Cart cart = {cart} removeFromCart = {removeFromCart}/>
 
+      <ProductList addToCart={addToCart} />
+      <Cart cart={cart} removeFromCart={removeFromCart} />
     </div>
   );
 }

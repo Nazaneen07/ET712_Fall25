@@ -52,7 +52,7 @@ img{width: 100%; display: block;}
 }
 .cartcontainer{
   width: 1000px;
-  margin: 2rem;
+  margin: 2rem auto;
   border: solid 1px gray;
   padding: 1.5rem;
 }
