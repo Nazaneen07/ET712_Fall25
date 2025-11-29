@@ -1,0 +1,95 @@
+*{box-sizing: border-box;}
+img{width: 100%; display: block;}
+body{background-color: #f1f8f1; font-family: 'Trebuchet MS';}
+
+
+/* NAV */
+.navbar{
+display: flex;
+justify-content: space-between;
+padding: 1rem;
+background-color: #94c997;
+}
+.navtitle{
+color: white;
+font-size: 1.5rem;
+text-decoration: none;
+font-weight: bold;
+}
+.navcart{
+color: white;
+text-decoration: none;
+font-weight: bold;
+}
+
+
+/* PRODUCTS */
+.producttitle{
+text-align: center;
+color: darkgreen;
+}
+.cardcontainer{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+.card{
+border: solid #7a907a 1px;
+width: 200px;
+margin: 2rem;
+padding: 1rem;
+border-radius: 8px;
+background-color: #ffffff;
+}
+.productname{
+text-align: center;
+font-weight: bold;
+}
+.productprice{
+text-align: center;
+color: #2c6b2f;
+font-size: 1.4rem;
+}
+.btn_addcart{
+width: 100%;
+border: none;
+background-color: #6aa86f;
+color: white;
+padding: 0.5rem;
+border-radius: 5px;
+}
+.btn_addcart:hover{
+cursor: pointer;
+background-color: #2e6d32;
+box-shadow: 0px 0px 4px 1px gray;
+}
+
+
+/* CART */
+.cartitle{
+color: #2f6b30;
+text-align: center;
+}
+.cartpage{
+width: 900px;
+margin: 2rem auto;
+border: solid 1px #b2c4b2;
+padding: 1.5rem;
+background-color: #ffffff;
+}
+.emptymsg{
+font-size: 1.3rem;
+font-weight: bold;
+text-align: center;
+padding: 2rem;
+color: gray;
+}
+.itemcart{
+display: flex;
+margin-bottom: 1.5rem;
+font-size: 1.2rem;
+align-items: center;
+}
+.cartitemimg{
+width: 10%;
+}
