@@ -17,12 +17,14 @@ console.log(name.id(12345))
 console.log(name.email("peter@neverland.edu"))
 
 console.log('---- Example 3: event emitter -----')
-const events = reuqire('events')
+const events = reuqire('events');
+import events from 'events'
 
 let eventEmitter = new events.EventEmitter()
 
-eventEmitter.on('test', function(a){
+eventEmitter.on('test', (a) => {
     console.log(a)
 })
 
 eventEmitter.emit('test', 'EVENTS IN NODEJS')
+
