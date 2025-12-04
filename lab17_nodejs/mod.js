@@ -1,5 +1,13 @@
-const helper = function(){
+const helper = function(data){
     return `${data} is loggin in!`
 }
 
-Module.export = helper 
+const id = (data)=>{
+    return `${data}`
+}
+
+const email = (useremail)=>{
+    return useremail
+}
+
+module.exports = { helper, id, email }
