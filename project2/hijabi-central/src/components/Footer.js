@@ -5,7 +5,7 @@ const Footer = () => {
     <footer style={styles.footer}>
       <div style={styles.container}>
         <div>
-          <h3 style={{color:'#6b8e6b'}}>🧕 Hijabi Central</h3>
+          <h3 style={{color:'#6b8e6b'}}> Hijabi Central</h3>
           <p>Stylish hijabs & accessories for every occasion</p>
         </div>
         <div>

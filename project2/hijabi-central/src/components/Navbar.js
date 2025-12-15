@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = ({ cartCount }) => {
   return (
     <nav style={styles.navbar}>
-      <Link to="/" style={styles.logo}>🧕 Hijabi Central</Link>
+      <Link to="/" style={styles.logo}> Hijabi Central</Link>
       <ul style={styles.linksList}>
         <li><Link to="/" style={styles.link}>Home</Link></li>
         <li><Link to="/products" style={styles.link}>Products</Link></li>
