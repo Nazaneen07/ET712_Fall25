@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  font-weight: 700;
+  text-decoration: underline;
+}
+

@@ -11,19 +11,37 @@ import ThankYou from './pages/ThankYou';
 import { StoreContext } from './context/StoreContext';
 
 function App() {
-  const { cartItemCount } = useContext(StoreContext);
+  const {
+    cartItemCount,
+    cartItems,
+    updateQuantity,
+    clearCart,
+  } = useContext(StoreContext);
 
   return (
     <Router>
       <Navbar cartCount={cartItemCount} />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/cart" element={<Cart />} />
+
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartItems={cartItems}
+              updateQuantity={updateQuantity}
+              clearCart={clearCart}
+            />
+          }
+        />
+
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
+
       <Footer />
     </Router>
   );

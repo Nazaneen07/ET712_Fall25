@@ -1,34 +1,61 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import { StoreContext } from '../context/StoreContext';
 
 const Products = () => {
-  const { hijabs, addToCart } = useContext(StoreContext);
-  const [sortOption, setSortOption] = useState('default');
-  const [paginated, setPaginated] = useState(hijabs);
+  const {
+    everydayHijabs,
+    fancyHijabs,
+    accessories,
+    addToCart,
+  } = useContext(StoreContext);
 
-  useEffect(() => {
-    let sorted = [...hijabs];
-    if(sortOption === 'price-low') sorted.sort((a,b)=>a.price-b.price);
-    if(sortOption === 'price-high') sorted.sort((a,b)=>b.price-a.price);
-    if(sortOption === 'name') sorted.sort((a,b)=>a.name.localeCompare(b.name));
-    setPaginated(sorted);
-  }, [sortOption, hijabs]);
+  const [category, setCategory] = useState('everyday');
+
+  let productsToShow = [];
+
+  if (category === 'everyday') productsToShow = everydayHijabs;
+  if (category === 'fancy') productsToShow = fancyHijabs;
+  if (category === 'accessories') productsToShow = accessories;
 
   return (
-    <div style={{padding:'2rem', maxWidth:'1200px', margin:'0 auto'}}>
-      <h1 style={{textAlign:'center', marginBottom:'2rem'}}>Our Hijabs</h1>
-      <div style={{textAlign:'center', marginBottom:'1.5rem'}}>
-        <label>Sort by: </label>
-        <select value={sortOption} onChange={e=>setSortOption(e.target.value)}>
-          <option value="default">Featured</option>
-          <option value="price-low">Price: Low to High</option>
-          <option value="price-high">Price: High to Low</option>
-          <option value="name">Name: A to Z</option>
+    <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
+      <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>
+        Our Products
+      </h1>
+
+      {/* Category Dropdown */}
+      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+        <label style={{ marginRight: '10px', fontWeight: 'bold' }}>
+          Category:
+        </label>
+
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          style={{ padding: '8px', borderRadius: '5px' }}
+        >
+          <option value="everyday">Everyday Hijabs</option>
+          <option value="fancy">Fancy Hijabs</option>
+          <option value="accessories">Accessories</option>
         </select>
       </div>
-      <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(250px, 1fr))', gap:'1.5rem'}}>
-        {paginated.map(item=><ProductCard key={item.id} product={item} addToCart={addToCart} />)}
+
+      {/* Products Grid */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '1.5rem',
+        }}
+      >
+        {productsToShow.map((item) => (
+          <ProductCard
+            key={item.id}
+            product={item}
+            addToCart={addToCart}
+          />
+        ))}
       </div>
     </div>
   );

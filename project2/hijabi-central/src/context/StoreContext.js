@@ -1,7 +1,7 @@
 // src/context/StoreContext.js
 import React, { createContext, useState, useEffect } from 'react';
 
-// Import images
+// Images
 import EH1 from '../images/everyday-hijabs/eh1.png';
 import EH2 from '../images/everyday-hijabs/eh2.png';
 import EH3 from '../images/everyday-hijabs/eh3.png';
@@ -32,22 +32,25 @@ import ACC7 from '../images/accessories/acc7.png';
 import ACC8 from '../images/accessories/acc8.png';
 import ACC9 from '../images/accessories/acc9.png';
 
-// Create context
 export const StoreContext = createContext();
 
-// Context Provider
 export const StoreProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
+  // Load cart from localStorage
   useEffect(() => {
     const savedCart = localStorage.getItem('cart');
-    if (savedCart) setCartItems(JSON.parse(savedCart));
+    if (savedCart) {
+      setCartItems(JSON.parse(savedCart));
+    }
   }, []);
 
+  // Save cart to localStorage
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
   }, [cartItems]);
 
+  // Cart functions
   const addToCart = (product, quantity = 1) => {
     setCartItems(prev => {
       const index = prev.findIndex(item => item.id === product.id);
@@ -62,7 +65,9 @@ export const StoreProvider = ({ children }) => {
 
   const updateQuantity = (productId, newQuantity) => {
     setCartItems(prev =>
-      prev.map(item => (item.id === productId ? { ...item, quantity: newQuantity } : item))
+      prev.map(item =>
+        item.id === productId ? { ...item, quantity: newQuantity } : item
+      )
     );
   };
 
@@ -70,44 +75,53 @@ export const StoreProvider = ({ children }) => {
     setCartItems(prev => prev.filter(item => item.id !== productId));
   };
 
-  const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const clearCart = () => {
+    setCartItems([]);
+  };
 
-  // Products data
+  const cartItemCount = cartItems.reduce(
+    (acc, item) => acc + item.quantity,
+    0
+  );
+
+  // Product data
   const everydayHijabs = [
-    { id: 1, name: 'Everyday Hijab 1', price: 15, image: EH1, shortDescription: 'Soft cotton hijab for daily wear.' },
-    { id: 2, name: 'Everyday Hijab 2', price: 18, image: EH2, shortDescription: 'Comfortable and breathable.' },
-    { id: 3, name: 'Everyday Hijab 3', price: 16, image: EH3, shortDescription: 'Lightweight and stylish.' },
-    { id: 4, name: 'Everyday Hijab 4', price: 20, image: EH4, shortDescription: 'Classic neutral tones.' },
-    { id: 5, name: 'Everyday Hijab 5', price: 14, image: EH5, shortDescription: 'Soft pastel colors.' },
-    { id: 6, name: 'Everyday Hijab 6', price: 17, image: EH6, shortDescription: 'Smooth fabric, easy to style.' },
-    { id: 7, name: 'Everyday Hijab 7', price: 19, image: EH7, shortDescription: 'Perfect for casual wear.' },
-    { id: 8, name: 'Everyday Hijab 8', price: 15, image: EH8, shortDescription: 'Durable and comfortable.' },
-    { id: 9, name: 'Everyday Hijab 9', price: 16, image: EH9, shortDescription: 'Soft cotton blend.' },
-  ];
+  { id: 1, name: 'Everyday Hijab (Basic Black)', price: 15, image: EH1, shortDescription: 'Black, soft cotton hijab designed for everyday wear' },
+  { id: 2, name: 'Everyday Hijab (Light Blue)', price: 18, image: EH2, shortDescription: 'Light blue, comfortable and breathable fabric' },
+  { id: 3, name: 'Everyday Hijab (Sage Green)', price: 16, image: EH3, shortDescription: 'Sage green, lightweight with a modern look' },
+  { id: 4, name: 'Everyday Hijab (Classic Orange)', price: 20, image: EH4, shortDescription: 'Classic orange, perfect for summer styling' },
+  { id: 5, name: 'Everyday Hijab (Pastel Pink)', price: 14, image: EH5, shortDescription: 'Soft pastel pink for an effortless everyday look' },
+  { id: 6, name: 'Everyday Hijab (Pretty Purple)', price: 17, image: EH6, shortDescription: 'Pretty purple, smooth fabric that is easy to style' },
+  { id: 7, name: 'Everyday Hijab (Crimson Red)', price: 19, image: EH7, shortDescription: 'Crimson red, ideal for casual and daily wear' },
+  { id: 8, name: 'Everyday Hijab (Pastel Yellow)', price: 15, image: EH8, shortDescription: 'Pastel yellow, durable and comfortable for all-day wear' },
+  { id: 9, name: 'Everyday Hijab (Soft White)', price: 16, image: EH9, shortDescription: 'Soft white cotton-blend hijab with a clean finish' },
+];
+
 
   const fancyHijabs = [
-    { id: 101, name: 'Fancy Hijab 1', price: 35, image: FH1, shortDescription: 'Elegant fabric with shimmer.' },
-    { id: 102, name: 'Fancy Hijab 2', price: 40, image: FH2, shortDescription: 'Perfect for special occasions.' },
-    { id: 103, name: 'Fancy Hijab 3', price: 38, image: FH3, shortDescription: 'Luxury satin finish.' },
-    { id: 104, name: 'Fancy Hijab 4', price: 42, image: FH4, shortDescription: 'Embellished with beads.' },
-    { id: 105, name: 'Fancy Hijab 5', price: 37, image: FH5, shortDescription: 'Elegant pastel colors.' },
-    { id: 106, name: 'Fancy Hijab 6', price: 39, image: FH6, shortDescription: 'Shiny chiffon fabric.' },
-    { id: 107, name: 'Fancy Hijab 7', price: 36, image: FH7, shortDescription: 'Perfect for parties.' },
-    { id: 108, name: 'Fancy Hijab 8', price: 41, image: FH8, shortDescription: 'High-quality silk touch.' },
-    { id: 109, name: 'Fancy Hijab 9', price: 43, image: FH9, shortDescription: 'Delicate embroidery.' },
+    { id: 101, name: '- Gris Souverain -', price: 35, image: FH1, shortDescription: 'Elegant fabric with shimmer.' },
+    { id: 102, name: '- Royale Blush -', price: 40, image: FH2, shortDescription: 'Perfect for special occasions.' },
+    { id: 103, name: '- Bleu Majesté -', price: 38, image: FH3, shortDescription: 'Luxury satin finish.' },
+    { id: 104, name: '- Dusty Desert -', price: 42, image: FH4, shortDescription: 'Embellished with beads.' },
+    { id: 105, name: '- Mint Éclat -', price: 37, image: FH5, shortDescription: 'Elegant pastel colors.' },
+    { id: 106, name: '- Arabian Nights -', price: 39, image: FH6, shortDescription: 'Shiny chiffon fabric.' },
+    { id: 107, name: '- Burjundy Noire -', price: 36, image: FH7, shortDescription: 'Perfect for parties.' },
+    { id: 108, name: '- Iridesse -', price: 41, image: FH8, shortDescription: 'High-quality silk touch.' },
+    { id: 109, name: '- Royal Safron -', price: 43, image: FH9, shortDescription: 'Delicate embroidery.' },
   ];
 
   const accessories = [
-    { id: 201, name: 'Accessory 1', price: 5, image: ACC1, shortDescription: 'Hijab pin set.' },
-    { id: 202, name: 'Accessory 2', price: 7, image: ACC2, shortDescription: 'Undercap for comfort.' },
-    { id: 203, name: 'Accessory 3', price: 6, image: ACC3, shortDescription: 'Hijab magnet set.' },
-    { id: 204, name: 'Accessory 4', price: 8, image: ACC4, shortDescription: 'Decorative brooch.' },
-    { id: 205, name: 'Accessory 5', price: 6, image: ACC5, shortDescription: 'Smooth satin underscarf.' },
-    { id: 206, name: 'Accessory 6', price: 9, image: ACC6, shortDescription: 'Hijab clips pack.' },
-    { id: 207, name: 'Accessory 7', price: 5, image: ACC7, shortDescription: 'Simple pins for daily use.' },
-    { id: 208, name: 'Accessory 8', price: 7, image: ACC8, shortDescription: 'Decorative hair pins.' },
-    { id: 209, name: 'Accessory 9', price: 8, image: ACC9, shortDescription: 'Comfortable undercap.' },
-  ];
+  { id: 201, name: 'Hijab Magnets', price: 5, image: ACC1, shortDescription: 'Set of 4' },
+  { id: 202, name: 'Decorative Hijab Pins', price: 7, image: ACC2, shortDescription: 'Set of 12' },
+  { id: 203, name: 'Essential Hijab Pin Set', price: 6, image: ACC3, shortDescription: 'Set of 50' },
+  { id: 204, name: 'Hijab Brooch Pins', price: 8, image: ACC4, shortDescription: 'Set of 8' },
+  { id: 205, name: 'Floral Hijab Pins', price: 6, image: ACC5, shortDescription: 'Set of 6' },
+  { id: 206, name: 'Classic Hijab Pin Set', price: 9, image: ACC6, shortDescription: 'Set of 4' },
+  { id: 207, name: 'Decorative Bow Hijab Pins', price: 5, image: ACC7, shortDescription: 'Set of 3' },
+  { id: 208, name: 'Floral Hijab Pins', price: 7, image: ACC8, shortDescription: 'Set of 10' },
+  { id: 209, name: 'Decorative Hijab Accessory Set', price: 8, image: ACC9, shortDescription: 'Set of 3' },
+];
+
 
   return (
     <StoreContext.Provider
@@ -120,6 +134,7 @@ export const StoreProvider = ({ children }) => {
         addToCart,
         updateQuantity,
         removeFromCart,
+        clearCart,
       }}
     >
       {children}

@@ -5,7 +5,7 @@ const Footer = () => {
     <footer style={styles.footer}>
       <div style={styles.container}>
         <div>
-          <h3 style={{color:'#6b8e6b'}}> Hijabi Central</h3>
+          <h3 style={{color:'#6b8e6b'}}> Hijabi Central ᥫ᭡.</h3>
           <p>Stylish hijabs & accessories for every occasion</p>
         </div>
         <div>
@@ -31,7 +31,7 @@ const Footer = () => {
 };
 
 const styles = {
-  footer: { backgroundColor: '#a1887f', color: '#fff', padding: '3rem 2rem', fontSize: '0.9rem' },
+  footer: { backgroundColor: '#d1ba9aff', color: '#fff', padding: '3rem 2rem', fontSize: '0.9rem' },
   container: { display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap:'2rem', maxWidth:'1200px', margin:'0 auto' },
   list: { listStyle:'none', padding:0, margin:0 },
   link: { color:'#fff', textDecoration:'none' },
